@@ -9,7 +9,9 @@ namespace Day_C_prgs
 
                static void Main(string[] args)
         {
-            datetimedifference();
+            // datetimedifference();
+            Program program = new Program();
+            program.doApp();
             #region Datetime
             //DateTime date = new DateTime(2023,06,7);
             //Console.WriteLine(date.ToString());
@@ -72,14 +74,24 @@ namespace Day_C_prgs
             //    Console.WriteLine("functions1 Static view");
             //}
 
-         //FunctionPointerAttributes
-          static void datetimedifference()
-            {
-                DateTime dat1 = new DateTime(2023, 1, 4);
-                DateTime dat2 = new DateTime(2023, 2, 5);
-                TimeSpan dif = dat2 - dat1;
-                Console.WriteLine(dif);
-            }
+            //FunctionPointerAttributes
+            //static void datetimedifference()
+            //  {
+            //      DateTime dat1 = new DateTime(2023, 1, 4);
+            //      DateTime dat2 = new DateTime(2023, 2, 5);
+            //      TimeSpan dif = dat2 - dat1;
+            //      Console.WriteLine(dif);
+            //  }
+
+        }
+        public void doApp()
+        {
+            DateTime dt = DateTime.Now;
+            Console.WriteLine(dt.ToString());
+            Console.WriteLine(dt.ToLongDateString());
+            Console.WriteLine(dt.ToShortDateString());
+            Console.WriteLine(dt.ToString("d"));
+            Console.WriteLine(dt.ToString("D"));
         }
     }
 }
