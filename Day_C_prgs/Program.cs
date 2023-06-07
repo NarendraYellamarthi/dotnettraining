@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Day_C_prgs
 {
     internal class Program
     {
-
-               static void Main(string[] args)
+       
+        
+        static void Main(string[] args)
         {
+            filehandlingconcepts filehandlingconcepts = new filehandlingconcepts();
+            filehandlingconcepts.doapp();
             // datetimedifference();
             Program program = new Program();
             program.doApp();
@@ -84,14 +89,39 @@ namespace Day_C_prgs
             //  }
 
         }
+        //public void doApp()
+        //{
+        //    DateTime dt = DateTime.Now;
+        //    Console.WriteLine(dt.ToString());
+        //    Console.WriteLine(dt.ToLongDateString());
+        //    Console.WriteLine(dt.ToShortDateString());
+        //    Console.WriteLine(dt.ToString("d"));
+        //    Console.WriteLine(dt.ToString("D"));
+        //}
         public void doApp()
         {
-            DateTime dt = DateTime.Now;
-            Console.WriteLine(dt.ToString());
-            Console.WriteLine(dt.ToLongDateString());
-            Console.WriteLine(dt.ToShortDateString());
-            Console.WriteLine(dt.ToString("d"));
-            Console.WriteLine(dt.ToString("D"));
+            String Str = new string("India is a big Country");
+            Console.WriteLine("String  Is " +Str);
+            Console.WriteLine("Upper " + Str.ToUpper());
+            Console.WriteLine("Lower " + Str.ToLower());
+            Console.WriteLine("contains :" + Str.Contains("C"));
+            Console.WriteLine("Endswith :" + Str.EndsWith("C"));
+            Console.WriteLine("Substring :" + Str.Substring(0,5));
+            Console.WriteLine("contains :" + Str.Trim());
+
+            Console.WriteLine("inser string with in a string :" + Str.Insert(5, " and US" ));
+
+            Console.WriteLine("split the string ");
+
+            string[] parts = Str.Split(" ");
+            for(int i = 0; i < parts.Length; i++)
+            {
+                Console.WriteLine(parts[i]);
+            }
+            
+            //Console.WriteLine(parts);
+
+
         }
     }
 }
